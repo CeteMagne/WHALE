@@ -61,7 +61,6 @@ html {
     color: #1af;
 }
  
- 
 a {
     font-size: 13px;
     color: #1af;
@@ -141,39 +140,39 @@ a {
 /*
 ホーム
 ****/
-.home .tweet-post {
+.home .post {
     display: flex;
     padding: 10px;
 }
  
-.home .tweet-post .my-icon {
+.home .post .my-icon {
     width: 80px;
     padding: 5px 15px 10px 10px;
 }
  
-.home .tweet-post .my-icon img {
+.home .post .my-icon img {
     width: 100%;
     border-radius: 50%;
     border: 0.2px solid #aaa;
 }
  
-.home .tweet-post .input-area {
+.home .post .input-area {
     width: calc(100% - 80px);
     flex-grow: 1;
 }
  
-.home .tweet-post .input-area textarea {
+.home .post .input-area textarea {
     border: 0;
     width: 100%;
     height: 100px;
     resize: none;
 }
  
-.home .tweet-post .input-area textarea:focus {
+.home .post .input-area textarea:focus {
     outline: none;
 }
  
-.home .tweet-post .input-area .bottom-area {
+.home .post .input-area .bottom-area {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -188,53 +187,53 @@ a {
     border-bottom: 1px solid #eef;
 }
  
-.home .tweet-list .tweet {
+.home .post-list .tweet {
     padding: 10px;
     display: flex;
     border-bottom: 1px solid #eef;
 }
  
-.home .tweet-list .tweet .user {
+.home .post-list .tweet .user {
     width: 80px;
     padding: 5px 15px 10px 10px;
 }
  
-.home .tweet-list .tweet .user img {
+.home .post-list .tweet .user img {
     width: 100%;
     border-radius: 50%;
     border: 0.2px solid #aaa;
 }
  
-.home .tweet-list .tweet .name {
+.home .post-list .tweet .name {
     padding-top: 5px;
 }
  
-.home .tweet-list .tweet .name a {
+.home .post-list .tweet .name a {
     color: #122;
 }
  
-.home .tweet-list .tweet .name a .nickname {
+.home .post-list .tweet .name a .nickname {
     color: #122;
     font-size: 17px;
     font-weight: bold;
 }
  
-.home .tweet-list .tweet .name a .user-name {
+.home .post-list .tweet .name a .user-name {
     color: #444;
     font-size: 14px;
 }
  
-.home .tweet-list .tweet .content {
+.home .post-list .tweet .content {
     width: calc(100% - 60px);
 }
  
-.home .tweet-list .tweet .content p {
+.home .post-list .tweet .content p {
     font-size: 16px;
     padding: 8px 0 0 0;
     margin-bottom: 8px;
 }
  
-.home .tweet-list .tweet .content img.post-image {
+.home .post-list .tweet .content img.post-image {
     width: 100%;
     border-radius: 15px;
     margin-bottom: 10px;
@@ -242,24 +241,24 @@ a {
     border: 1px solid #eef;
 }
  
-.home .tweet-list .tweet .content .icon-list {
+.home .post-list .tweet .content .icon-list {
     display: flex;
 }
  
-.home .tweet-list .tweet .content .icon-list .like img {
+.home .post-list .tweet .content .icon-list .like img {
     width: 25px;
     margin-right: 10px;
     cursor: pointer;
 }
  
-.home .tweet-list .tweet .content .icon-list .like-count {
+.home .post-list .tweet .content .icon-list .like-count {
     width: 25px;
     padding-top: 2px;
     color: #444;
 }
  
 @media screen and (max-width: 500px) {
-    .home .tweet-list .tweet .user {
+    .home .post-list .tweet .user {
         width:60px;
         padding: 5px 10px 10px 5px;
     }
@@ -364,4 +363,51 @@ body.signup {
     font-size: 16px;
     margin-right: 30px;
     color: #778;
+}
+ 
+/*
+検索
+****/
+.search .search-area {
+    display: flex;
+    padding: 15px;
+}
+ 
+.search .search-area input {
+    width: 70%;
+    max-width: 300px;
+    margin-right: 10px;
+}
+ 
+/*
+通知
+****/
+.notification .notification-list .no-result {
+    padding: 20px;
+}
+ 
+.notification .notification-list .notification-item {
+    padding: 10px;
+    border-bottom: 1px solid rgb(235, 238, 240);
+}
+ 
+.notification .notification-list .notification-item .user {
+    width: 70px;
+    padding: 5px 15px 10px 10px;
+}
+ 
+.notification .notification-list .notification-item .user img {
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid rgb(235, 238, 240);
+}
+ 
+.notification .notification-list .notification-item .content {
+    width: 100%;
+}
+ 
+.notification .notification-list .notification-item .content p {
+    font-size: 16px;
+    padding: 8px 0 0 0;
+    margin-bottom: 8px;
 }
