@@ -94,7 +94,7 @@ public class SignUpBeans {
 			//sql文の作成
 			String sql = "insert into users(nickname, name, email, password) values ('" + nickname + "','" + name + "','" + email + "','" + password + "')";
 
-			//デーtベースへの接続およびsqlの実行
+			//データベースへの接続およびsqlの実行
 			doDataBase(sql);
 
 			return true;
@@ -105,4 +105,21 @@ public class SignUpBeans {
 		}
 	}
 
+	public Boolean SignIn() {
+		try {
+			
+			//sql文の作成
+			String sql = "select * from users where name = '" + name + "' AND password = '" + password + "'";
+			
+			//データベースへの接続およびsqlの実行
+			doDataBase(sql);
+			
+			return true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
 }

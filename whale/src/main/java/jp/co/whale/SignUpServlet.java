@@ -31,6 +31,9 @@ public class SignUpServlet extends HttpServlet {
 
 		//modeの取得
 		String mode = request.getParameter("mode");
+		
+		//サインアップ、サインインのステータス（成功/失敗）を保存するための変数
+		String status = " ";
 
 		//JavaBeansの初期化
 		SignUpBeans sign = new SignUpBeans(request);
@@ -38,10 +41,23 @@ public class SignUpServlet extends HttpServlet {
 		switch (mode) {
 		case "signup":
 			if (sign.SignUp() == false) {
-
+				status = "会員登録に失敗しました";
+				request.setAttribute("status", status);
+				request.getRequestDispatcher("/sign-up.jsp").forward(request, response);
+			} else {
+				request.getRequestDispatcher("/sign-in.jsp").forward(request, response);
 			}
-			request.getRequestDispatcher("/sign-in.jsp").forward(request, response);
 			break;
+			
+		case "signin":
+			if (sign.SignIn() == false) {
+				status = "ログインに失敗しました";
+				request.setAttribute("status", status);
+				request.getRequestDispatcher("/sign-in.jsp").forward(request, response);
+			} else {
+				request.getRequestDispatcher("/home.jsp").forward(request, response);
+			}
+			
 		}
 		
 	}

@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="../Views/img/logo-twitterblue.svg">
+<link rel="icon" href="<%=request.getContextPath()%>/img/logo.svg">
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/sign.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
 
 <title>ログイン画面 / Twitterクローン</title>
 <meta name="description" content="ログイン画面です">
@@ -17,11 +17,21 @@
 
 <body class="signup text-center">
 	<main class="form-signup">
-		<form action="/whale/SignUp" method="post">
-			<img src="../Views/img/logo-white.svg" alt="" class="logo-white">
+
+		<%
+		String status = (String) request.getAttribute("status");
+		if (status == null) {
+			status = "";
+		}
+		%>
+
+		<%=status%>
+
+		<form action="/whale/SignUp" method="POST">
+			<img src="<%=request.getContextPath()%>/img/logo.svg" alt="" class="logo">
 			<h1>WHALEにログイン</h1>
-			<input type="email" class="form-control" name="email" placeholder="メールアドレス" required autofocus> <input type="password" class="form-control" name="password" placeholder="パスワード" required>
-			<button class="w-100 btn btn-lg" type="submit">ログイン</button>
+			<input type="name" class="form-control" name="name" placeholder="ユーザー名、例)whale123" required autofocus> <input type="password" class="form-control" name="password" placeholder="パスワード" required>
+			<button class="w-100 btn btn-lg" type="submit" name="mode" value="signin">ログイン</button>
 			<p class="mt-3 mb-2">
 				<a href="<%=request.getContextPath()%>/sign-up.jsp">会員登録する</a>
 			</p>
